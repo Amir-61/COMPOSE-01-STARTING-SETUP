@@ -27,11 +27,11 @@ docker build -t goals-node .
 Run Node API Container
 ---------------------
 
-docker run --name goals-backend \
+docker run --name goals-backend \ 
   -e MONGODB_USERNAME=max \
   -e MONGODB_PASSWORD=secret \
   -v logs:/app/logs \
-  -v /Users/maximilianschwarzmuller/development/teaching/udemy/docker-complete/backend:/app \
+   -v /Users/maximilianschwarzmuller/development/teaching/udemy/docker-complete/backend:/app \
   -v /app/node_modules \
   --rm \
   -d \

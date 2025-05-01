@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package.json .
 
 RUN npm install
+# ⬇️ Add this if nodemon is a devDependency:
+RUN npm install -g nodemon
 
 COPY . .
 
