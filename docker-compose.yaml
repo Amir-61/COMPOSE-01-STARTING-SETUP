@@ -7,6 +7,7 @@ services:
     volumes:
       - data:/data/db
     image: mongo
+    container_name: mongodb # optional
   backend:
     build: ./backend
     ports:
@@ -17,6 +18,7 @@ services:
       - /app/node_modules
     env_file:
       - ./.env/backend.env
+    container_name: backend # optional
     depends_on:
       - mongodb
 
@@ -28,6 +30,7 @@ services:
       - 3000:3000
     stdin_open: true
     tty: true
+    container_name: frontend # optional
     depends_on:
       - backend
 
